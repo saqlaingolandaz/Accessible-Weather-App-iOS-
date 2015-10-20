@@ -601,10 +601,13 @@
                     </view>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="375" height="667"/>
+                    <connections>
+                        <outlet property="time1Label" destination="bIx-5k-Jb7" id="ok3-Hz-2S4"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sy-et-ATe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="139.5" y="1659.5"/>
+            <point key="canvasLocation" x="322.5" y="1745.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="G3S-n3-jd3">
