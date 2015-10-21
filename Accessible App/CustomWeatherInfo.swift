@@ -16,16 +16,18 @@ class CustomWeatherInfo: UIViewController {
     @IBOutlet weak var weatherInfo: UILabel!
     
     var weatherString:String = ""
-    
 
     @IBAction func buttonPressed(sender: AnyObject) {
+        
+        stateBar.resignFirstResponder()
+        
         if(cityBar.text == "" && stateBar.text == "") {
             self.weatherInfo.text = "Please Enter City and State/Country Name"
         } else if(cityBar.text == "" && stateBar.text != "") {
             self.weatherInfo.text = "Please Enter City Name"
         } else if(stateBar.text == "" && cityBar.text != "") {
             self.weatherInfo.text = "Please Enter State/Country Name"
-        }
+        } else {
         
         var cityBarString:String = cityBar.text as String
         let newString = cityBarString.stringByReplacingOccurrencesOfString(" ", withString: "%20")
@@ -50,6 +52,7 @@ class CustomWeatherInfo: UIViewController {
         self.weatherString += topLevel["precip_today_string"] as NSString
         println(self.weatherString)
         self.weatherInfo.text = self.weatherString
+        }
         
     }
     
