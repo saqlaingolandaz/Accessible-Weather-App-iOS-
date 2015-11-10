@@ -17,6 +17,12 @@
 		2B895AA41B9783CB00DC4C96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B895AA21B9783CB00DC4C96 /* LaunchScreen.xib */; };
 		2B895AB01B9783CB00DC4C96 /* Accessible_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B895AAF1B9783CB00DC4C96 /* Accessible_AppTests.swift */; };
 		2BB49ACC1BB31BC100A37531 /* WeeklyWeatherClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB49ACB1BB31BC100A37531 /* WeeklyWeatherClass.swift */; };
+		2BB72B021BF1AEEC006EF414 /* Fog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B011BF1AEEC006EF414 /* Fog.wav */; };
+		2BB72B041BF1AEF8006EF414 /* Rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B031BF1AEF8006EF414 /* Rain.wav */; };
+		2BB72B061BF1AEFF006EF414 /* Snow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B051BF1AEFF006EF414 /* Snow.wav */; };
+		2BB72B081BF1AF06006EF414 /* Sun.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B071BF1AF06006EF414 /* Sun.wav */; };
+		2BB72B0A1BF1AF0B006EF414 /* Thunder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B091BF1AF0B006EF414 /* Thunder.wav */; };
+		2BB72B0C1BF1AF11006EF414 /* Wind.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B0B1BF1AF11006EF414 /* Wind.wav */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +50,12 @@
 		2B895AAE1B9783CB00DC4C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B895AAF1B9783CB00DC4C96 /* Accessible_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessible_AppTests.swift; sourceTree = "<group>"; };
 		2BB49ACB1BB31BC100A37531 /* WeeklyWeatherClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherClass.swift; sourceTree = "<group>"; };
+		2BB72B011BF1AEEC006EF414 /* Fog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fog.wav; sourceTree = "<group>"; };
+		2BB72B031BF1AEF8006EF414 /* Rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Rain.wav; sourceTree = "<group>"; };
+		2BB72B051BF1AEFF006EF414 /* Snow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Snow.wav; sourceTree = "<group>"; };
+		2BB72B071BF1AF06006EF414 /* Sun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sun.wav; sourceTree = "<group>"; };
+		2BB72B091BF1AF0B006EF414 /* Thunder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Thunder.wav; sourceTree = "<group>"; };
+		2BB72B0B1BF1AF11006EF414 /* Wind.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Wind.wav; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -101,6 +113,12 @@
 		2B895A971B9783CB00DC4C96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				2BB72B0B1BF1AF11006EF414 /* Wind.wav */,
+				2BB72B091BF1AF0B006EF414 /* Thunder.wav */,
+				2BB72B071BF1AF06006EF414 /* Sun.wav */,
+				2BB72B051BF1AEFF006EF414 /* Snow.wav */,
+				2BB72B031BF1AEF8006EF414 /* Rain.wav */,
+				2BB72B011BF1AEEC006EF414 /* Fog.wav */,
 				2B12AB8C1BA0EB3900FFC86A /* wulogo.png */,
 				2B895A981B9783CB00DC4C96 /* Info.plist */,
 			);
@@ -207,9 +225,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				2B895A9F1B9783CB00DC4C96 /* Main.storyboard in Resources */,
+				2BB72B081BF1AF06006EF414 /* Sun.wav in Resources */,
 				2B895AA41B9783CB00DC4C96 /* LaunchScreen.xib in Resources */,
 				2B12AB8D1BA0EB3900FFC86A /* wulogo.png in Resources */,
 				2B895AA11B9783CB00DC4C96 /* Images.xcassets in Resources */,
+				2BB72B061BF1AEFF006EF414 /* Snow.wav in Resources */,
+				2BB72B0C1BF1AF11006EF414 /* Wind.wav in Resources */,
+				2BB72B041BF1AEF8006EF414 /* Rain.wav in Resources */,
+				2BB72B021BF1AEEC006EF414 /* Fog.wav in Resources */,
+				2BB72B0A1BF1AF0B006EF414 /* Thunder.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
