@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import AVFoundation
 
 class ViewController: UIViewController {
     
@@ -22,12 +23,59 @@ class ViewController: UIViewController {
     var tempString:String = ""
     var feelsLikeString:String = ""
     var precipString:String = ""
+    var forecastString:String = ""
+    
+    var bgMusic:AVAudioPlayer = AVAudioPlayer()
+    
+    
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         setWeatherInfo()
-        
+        if self.forecastString == "sunny" || self.forecastString == "clear" || self.forecastString == "mostlysunny" || self.forecastString == "partlysunny" {
+            let bgMusicURL:NSURL = NSBundle.mainBundle().URLForResource("Sun", withExtension: "wav")!
+            do { bgMusic = try AVAudioPlayer(contentsOfURL: bgMusicURL, fileTypeHint: nil) }
+            catch {
+                return print("no music file")
+            }
+            bgMusic.play()
+        } else if self.forecastString == "cloudy" || self.forecastString == "mostlycloudy" || self.forecastString == "partlycloudy" {
+            let bgMusicURL:NSURL = NSBundle.mainBundle().URLForResource("Cloud", withExtension: "wav")!
+            do { bgMusic = try AVAudioPlayer(contentsOfURL: bgMusicURL, fileTypeHint: nil) }
+            catch {
+                return print("no music file")
+            }
+            bgMusic.play()
+        } else if self.forecastString == "chancerain" || self.forecastString == "rain" {
+            let bgMusicURL:NSURL = NSBundle.mainBundle().URLForResource("Rain", withExtension: "wav")!
+            do { bgMusic = try AVAudioPlayer(contentsOfURL: bgMusicURL, fileTypeHint: nil) }
+            catch {
+                return print("no music file")
+            }
+            bgMusic.play()
+        } else if self.forecastString == "chancetstorms" || self.forecastString == "tstorms" {
+            let bgMusicURL:NSURL = NSBundle.mainBundle().URLForResource("Thunder", withExtension: "wav")!
+            do { bgMusic = try AVAudioPlayer(contentsOfURL: bgMusicURL, fileTypeHint: nil) }
+            catch {
+                return print("no music file")
+            }
+            bgMusic.play()
+        } else if self.forecastString == "chanceflurries" || self.forecastString == "chancesleet" || self.forecastString == "chancesnow" || self.forecastString == "flurries" || self.forecastString == "sleet" || self.forecastString == "snow" {
+            let bgMusicURL:NSURL = NSBundle.mainBundle().URLForResource("Snow", withExtension: "wav")!
+            do { bgMusic = try AVAudioPlayer(contentsOfURL: bgMusicURL, fileTypeHint: nil) }
+            catch {
+                return print("no music file")
+            }
+            bgMusic.play()
+        } else if self.forecastString == "hazy" || self.forecastString == "fog" {
+            let bgMusicURL:NSURL = NSBundle.mainBundle().URLForResource("Fog", withExtension: "wav")!
+            do { bgMusic = try AVAudioPlayer(contentsOfURL: bgMusicURL, fileTypeHint: nil) }
+            catch {
+                return print("no music file")
+            }
+            bgMusic.play()
+        }
     }
 
     override func didReceiveMemoryWarning() {
@@ -62,6 +110,9 @@ class ViewController: UIViewController {
 
         self.precipString = topLevel["precip_today_string"] as! String
         precipLabel.text = "Precipitation: " + self.precipString
+        
+        self.forecastString = topLevel["icon"] as! String
+        print(self.forecastString)
     }
 
 

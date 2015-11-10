@@ -142,7 +142,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VZO-4R-j8C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-342.5" y="136.5"/>
+            <point key="canvasLocation" x="-31.5" y="236.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
@@ -693,7 +693,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="a8U-20-G5L" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="496.5" y="1058.5"/>
+            <point key="canvasLocation" x="523.5" y="1058.5"/>
         </scene>
         <!--Weekly Weather Class-->
         <scene sceneID="rrG-oA-oqB">
@@ -1138,7 +1138,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5sy-et-ATe" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="466.5" y="1873.5"/>
+            <point key="canvasLocation" x="523.5" y="1863.5"/>
         </scene>
         <!--Custom Weather Info-->
         <scene sceneID="G3S-n3-jd3">
@@ -1175,13 +1175,6 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weather Info for Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-gj-wMz">
-                                <rect key="frame" x="0.0" y="173" width="375" height="260"/>
-                                <animations/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BSK-vE-CJu">
                                 <rect key="frame" x="119" y="129" width="137" height="30"/>
                                 <animations/>
@@ -1195,6 +1188,13 @@
                                     <action selector="buttonPressed:" destination="4as-07-epp" eventType="touchUpInside" id="8Ed-Tb-AXK"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Weather Info for Location" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OBP-gj-wMz">
+                                <rect key="frame" x="0.0" y="270" width="375" height="260"/>
+                                <animations/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -1227,15 +1227,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Peu-UI-GKf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1038.5" y="136.5"/>
+            <point key="canvasLocation" x="1038.5" y="236.5"/>
         </scene>
     </scenes>
     <resources>
         <image name="wulogo.png" width="1104" height="658"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="qLm-4R-eFq"/>
-        <segue reference="zqL-kv-vHi"/>
         <segue reference="Fbq-s3-zCU"/>
+        <segue reference="zqL-kv-vHi"/>
+        <segue reference="BbX-M1-rnj"/>
     </inferredMetricsTieBreakers>
 </document>
