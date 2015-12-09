@@ -100,12 +100,12 @@ class HourlyWeatherClass: UIViewController {
         var parsedData:NSDictionary = [:]
         
         do {
-            parsedData = try NSJSONSerialization.JSONObjectWithData(returnedData!, options: NSJSONReadingOptions.MutableContainers)as! NSDictionary
+        parsedData = try NSJSONSerialization.JSONObjectWithData(returnedData!, options: NSJSONReadingOptions.MutableContainers)as! NSDictionary
         } catch let error as NSError {
-            // Catch fires here, with an NSErrro being thrown from the JSONObjectWithData method
-            print("A JSON parsing error occurred, here are the details:\n \(error)")
+        // Catch fires here, with an NSErrro being thrown from the JSONObjectWithData method
+        print("A JSON parsing error occurred, here are the details:\n \(error)")
         }
-    
+        
         var main:NSArray = parsedData["hourly_forecast"] as! NSArray
         
         var firstTime:NSDictionary = main[0]["FCTTIME"] as! NSDictionary
@@ -129,7 +129,7 @@ class HourlyWeatherClass: UIViewController {
         var pic1 = NSURL(string: img1 as String)
         var pic11 = NSData(contentsOfURL: pic1!)
         self.img1Label.image = UIImage(data: pic11!)
-
+        
         var secondTime:NSDictionary = main[1]["FCTTIME"] as! NSDictionary
         var time2:NSString = secondTime["civil"] as! NSString
         self.time2String = time2 as String
@@ -239,7 +239,6 @@ class HourlyWeatherClass: UIViewController {
         var pic6 = NSURL(string: img6 as String)
         var pic66 = NSData(contentsOfURL: pic6!)
         self.img6Label.image = UIImage(data: pic66!)
-
     }
 
 
