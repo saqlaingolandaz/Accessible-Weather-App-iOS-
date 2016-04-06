@@ -11,64 +11,106 @@ import UIKit
 class CustomWeatherInfo: UIViewController {
     
     @IBOutlet weak var cityBar: UITextField!
-    @IBOutlet weak var stateBar: UITextField!
+//    @IBOutlet weak var stateBar: UITextField!
     @IBOutlet weak var weatherInfoButton: UIButton!
-    @IBOutlet weak var weatherInfo: UILabel!
+//    @IBOutlet weak var weatherInfo: UILabel!
     
     var weatherString:String = ""
+    var cityBarString:String = ""
+    var contrast:String = "Contrast"
+    
+    override func shouldPerformSegueWithIdentifier(identifier: String!, sender: AnyObject!) -> Bool {
+        if identifier == "go" {
+            
+            if (cityBar.text!.isEmpty) {
+                
+                let alert = UIAlertView()
+                alert.title = "No Text Detected"
+                alert.message = "Please Enter City Name In The Box"
+                alert.addButtonWithTitle("Ok")
+                alert.show()
+                
+                return false
+            }
+                
+            else {
+                print(cityBar.text)
+                cityBarString = cityBar.text! as String
+                cityBarString = cityBarString.stringByReplacingOccurrencesOfString(" ", withString: "%20")
+                return true
+            }
+        }
+
+        
+        // by default, transition
+        return true
+    }
 
     @IBAction func buttonPressed(sender: AnyObject) {
         
-        stateBar.resignFirstResponder()
+        cityBar.resignFirstResponder()
         
-        if(cityBar.text == "" && stateBar.text == "") {
-            self.weatherInfo.text = "Please Enter City and State/Country Name"
-        } else if(cityBar.text == "" && stateBar.text != "") {
-            self.weatherInfo.text = "Please Enter City Name"
-        } else if(stateBar.text == "" && cityBar.text != "") {
-            self.weatherInfo.text = "Please Enter State/Country Name"
-        } else {
         
-        var cityBarString:String = cityBar.text! as String
-        let newString = cityBarString.stringByReplacingOccurrencesOfString(" ", withString: "%20")
-        
-        var stateBarString:String = stateBar.text! as String
-        let newString2 = stateBarString.stringByReplacingOccurrencesOfString(" ", withString: "%20")
-        
-        let session = NSURLSession.sharedSession()
-        let url = NSURL(string:"https://api.wunderground.com/api/16337742f9b11efe/conditions/q/" + newString + "%20" + newString2 + ".json")
-        let returnedData = NSData(contentsOfURL: url!)
-        var error: NSError?
-            var parsedData:NSDictionary = [:]
+    }
+    
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if(segue.identifier == "go") {
+            var newController = segue.destinationViewController as! CustomWeatherInfo2
             
-            do {
-                parsedData = try NSJSONSerialization.JSONObjectWithData(returnedData!, options: NSJSONReadingOptions.MutableContainers)as! NSDictionary
-            } catch let error as NSError {
-                // Catch fires here, with an NSErrro being thrown from the JSONObjectWithData method
-                print("A JSON parsing error occurred, here are the details:\n \(error)")
-            }
-        
-        var topLevel:NSDictionary = parsedData["current_observation"] as! NSDictionary
-        var secondLevel:NSDictionary = topLevel["display_location"] as! NSDictionary
-        
-        self.weatherString = (secondLevel["full"] as! NSString as String) + "\n"
-        self.weatherString += (topLevel["temperature_string"] as! NSString as String) + "\n"
-        self.weatherString += "Feels Like: "
-        self.weatherString += (topLevel["feelslike_string"] as! NSString as String) + "\n"
-        self.weatherString += "Precipitation: "
-        self.weatherString += topLevel["precip_today_string"] as! NSString as String
-        print(self.weatherString)
-        self.weatherInfo.text = self.weatherString
+            newController.location = cityBarString
         }
-        
     }
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        setColor()
+        
     }
 
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+        
+        let userPrefs = NSUserDefaults.standardUserDefaults()
+        var contrastVal:Bool = false
+        
+        if let contrastValue:Bool = userPrefs.boolForKey(contrast){
+            contrastVal = contrastValue
+        }
+        
+        if(contrastVal)
+        {
+            
+            return UIStatusBarStyle.LightContent
+        }
+        else{
+            return UIStatusBarStyle.Default
+        }
+    }
+    
+    func setColor()
+    {
+        let userPrefs = NSUserDefaults.standardUserDefaults()
+        var contrastVal:Bool = false
+        
+        if let contrastValue:Bool = userPrefs.boolForKey(contrast){
+            contrastVal = contrastValue
+        }
+        
+        if(contrastVal)
+        {
+            self.view.backgroundColor = UIColor.blackColor()
+            cityBar.textColor = UIColor.whiteColor()
+            cityBar.backgroundColor = UIColor.darkGrayColor()
+            
+            weatherInfoButton.tintColor = UIColor.orangeColor()
+        }
+        else
+        {
+        
+        }
+    }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()

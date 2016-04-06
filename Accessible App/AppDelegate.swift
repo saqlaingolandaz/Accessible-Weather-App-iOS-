@@ -16,7 +16,64 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
+        //Actions
+        let firstAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        firstAction.identifier = "FIRST_ACTION"
+        firstAction.title = "Close"
+        
+        firstAction.activationMode = UIUserNotificationActivationMode.Background
+        firstAction.destructive = true
+        firstAction.authenticationRequired = false
+        
+        let secondAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        secondAction.identifier = "SECOND_ACTION"
+        secondAction.title = "Open App"
+        
+        secondAction.activationMode = UIUserNotificationActivationMode.Foreground
+        secondAction.destructive = false
+        secondAction.authenticationRequired = false
+        
+        let thirdAction:UIMutableUserNotificationAction = UIMutableUserNotificationAction()
+        thirdAction.identifier = "THIRD_ACTION"
+        thirdAction.title = "Third Action"
+        
+        thirdAction.activationMode = UIUserNotificationActivationMode.Background
+        thirdAction.destructive = false
+        thirdAction.authenticationRequired = false
+        
+        // category
+        
+        let firstCategory:UIMutableUserNotificationCategory = UIMutableUserNotificationCategory()
+        firstCategory.identifier = "FIRST_CATEGORY"
+        
+        firstCategory.setActions([firstAction, secondAction], forContext: UIUserNotificationActionContext.Default)
+        
+        
+        // NSSet of all our categories
+        let mySettings:UIUserNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert, .Badge, .Sound], categories: Set(arrayLiteral: firstCategory))
+        
+        UIApplication.sharedApplication().registerUserNotificationSettings(mySettings)
+        
+        
         return true
+    }
+    
+    func application(application: UIApplication,
+        handleActionWithIdentifier identifier:String?,
+        forLocalNotification notification:UILocalNotification,
+        completionHandler: (() -> Void))
+    {
+        
+        if (identifier == "FIRST_ACTION")
+    {
+        NSNotificationCenter.defaultCenter().postNotificationName("actionOnePressed", object: nil)
+    }
+        else if (identifier == "SECOND_ACTION")
+    {
+        NSNotificationCenter.defaultCenter().postNotificationName("actionTwoPressed", object: nil)
+        }
+        
+        completionHandler()
     }
 
     func applicationWillResignActive(application: UIApplication) {

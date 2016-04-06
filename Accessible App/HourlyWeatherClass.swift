@@ -11,6 +11,7 @@ import UIKit
 class HourlyWeatherClass: UIViewController {
     
     
+    @IBOutlet weak var hourlyHeadingLabel: UILabel!
     @IBOutlet weak var time1Label: UILabel!
     @IBOutlet weak var forecast1Label: UILabel!
     @IBOutlet weak var temp1Label: UILabel!
@@ -87,10 +88,121 @@ class HourlyWeatherClass: UIViewController {
     var precip6String:String = ""
     var img6String:String = ""
     
+    var contrast:String = "Contrast"
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setColor()
         hourlyData()
+    }
+    
+    func setColor()
+    {
+        let userPrefs = NSUserDefaults.standardUserDefaults()
+        var contrastVal:Bool = false
+        
+        if let contrastValue:Bool = userPrefs.boolForKey(contrast){
+            contrastVal = contrastValue
+        }
+        
+        if(contrastVal)
+        {
+            self.view.backgroundColor = UIColor.blackColor()
+            
+            hourlyHeadingLabel.textColor = UIColor.whiteColor()
+            time1Label.textColor = UIColor.whiteColor()
+            temp1Label.textColor = UIColor.whiteColor()
+            forecast1Label.textColor = UIColor.whiteColor()
+            precip1Label.textColor = UIColor.whiteColor()
+            
+            time2Label.textColor = UIColor.whiteColor()
+            temp2Label.textColor = UIColor.whiteColor()
+            forecast2Label.textColor = UIColor.whiteColor()
+            precip2Label.textColor = UIColor.whiteColor()
+            
+            time3Label.textColor = UIColor.whiteColor()
+            temp3Label.textColor = UIColor.whiteColor()
+            forecast3Label.textColor = UIColor.whiteColor()
+            precip3Label.textColor = UIColor.whiteColor()
+            
+            time4Label.textColor = UIColor.whiteColor()
+            temp4Label.textColor = UIColor.whiteColor()
+            forecast4Label.textColor = UIColor.whiteColor()
+            precip4Label.textColor = UIColor.whiteColor()
+            
+            time5Label.textColor = UIColor.whiteColor()
+            temp5Label.textColor = UIColor.whiteColor()
+            forecast5Label.textColor = UIColor.whiteColor()
+            precip5Label.textColor = UIColor.whiteColor()
+            
+            time6Label.textColor = UIColor.whiteColor()
+            temp6Label.textColor = UIColor.whiteColor()
+            forecast6Label.textColor = UIColor.whiteColor()
+            precip6Label.textColor = UIColor.whiteColor()
+        }
+        else
+        {
+            self.view.backgroundColor = UIColor.whiteColor()
+            
+            hourlyHeadingLabel.textColor = UIColor.blackColor()
+            time1Label.textColor = UIColor.blackColor()
+            temp1Label.textColor = UIColor.blackColor()
+            forecast1Label.textColor = UIColor.blackColor()
+            precip1Label.textColor = UIColor.blackColor()
+            
+            time2Label.textColor = UIColor.blackColor()
+            temp2Label.textColor = UIColor.blackColor()
+            forecast2Label.textColor = UIColor.blackColor()
+            precip2Label.textColor = UIColor.blackColor()
+            
+            time3Label.textColor = UIColor.blackColor()
+            temp3Label.textColor = UIColor.blackColor()
+            forecast3Label.textColor = UIColor.blackColor()
+            precip3Label.textColor = UIColor.blackColor()
+            
+            time4Label.textColor = UIColor.blackColor()
+            temp4Label.textColor = UIColor.blackColor()
+            forecast4Label.textColor = UIColor.blackColor()
+            precip4Label.textColor = UIColor.blackColor()
+            
+            time5Label.textColor = UIColor.blackColor()
+            temp5Label.textColor = UIColor.blackColor()
+            forecast5Label.textColor = UIColor.blackColor()
+            precip5Label.textColor = UIColor.blackColor()
+            
+            time6Label.textColor = UIColor.blackColor()
+            temp6Label.textColor = UIColor.blackColor()
+            forecast6Label.textColor = UIColor.blackColor()
+            precip6Label.textColor = UIColor.blackColor()
+        }
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+        
+        let userPrefs = NSUserDefaults.standardUserDefaults()
+        var contrastVal:Bool = false
+        
+        if let contrastValue:Bool = userPrefs.boolForKey(contrast){
+            contrastVal = contrastValue
+        }
+        
+        if(contrastVal)
+        {
+            
+            return UIStatusBarStyle.LightContent
+        }
+        else{
+            return UIStatusBarStyle.Default
+        }
+    }
+    
+    func ConvertFtoC(temp:NSString)->NSString
+    {
+        var floatValue:Float = temp.floatValue
+        floatValue = ((floatValue - 32)*5)/9.0
+        let temp2:NSString  = NSString(format: "%.0f", floatValue)
+        return temp2
     }
     
     func hourlyData() {
@@ -106,6 +218,24 @@ class HourlyWeatherClass: UIViewController {
         print("A JSON parsing error occurred, here are the details:\n \(error)")
         }
         
+        //Get the default units value
+        let userPrefs = NSUserDefaults.standardUserDefaults()
+        var farenheit:Bool = false
+        var units:String = "Units"
+        
+        if let value:Int = userPrefs.integerForKey(units){
+            if (value == 1)
+            {
+                farenheit = true
+            }
+            else
+            {
+                farenheit = false
+            }
+        }
+        
+        
+        
         var main:NSArray = parsedData["hourly_forecast"] as! NSArray
         
         var firstTime:NSDictionary = main[0]["FCTTIME"] as! NSDictionary
@@ -118,7 +248,15 @@ class HourlyWeatherClass: UIViewController {
         self.forecast1Label.text = self.forecast1String
         var firstTemp:NSDictionary = main[0]["temp"] as! NSDictionary
         var temp1:NSString = firstTemp["english"] as! NSString
-        self.temp1String = "Temperature: " + (temp1 as String) + "ºF"
+        if(farenheit)
+        {
+            self.temp1String = "Temperature: " + (temp1 as String) + "ºF"
+        }
+        else
+        {
+            temp1  = ConvertFtoC(temp1)
+            self.temp1String = "Temperature: " + (temp1 as String) + "ºC"
+        }
         self.temp1Label.text = self.temp1String
         var firstPrecip:NSDictionary = main[0] as! NSDictionary
         var precip1:NSString = firstPrecip["pop"] as! NSString
@@ -140,7 +278,15 @@ class HourlyWeatherClass: UIViewController {
         self.forecast2Label.text = self.forecast2String
         var secondTemp:NSDictionary = main[1]["temp"] as! NSDictionary
         var temp2:NSString = secondTemp["english"] as! NSString
-        self.temp2String = "Temperature: " + (temp2 as String) + "ºF"
+        if(farenheit)
+        {
+            self.temp2String = "Temperature: " + (temp2 as String) + "ºF"
+        }
+        else
+        {
+            temp2  = ConvertFtoC(temp2)
+            self.temp2String = "Temperature: " + (temp2 as String) + "ºC"
+        }
         self.temp2Label.text = self.temp2String
         var secondPrecip:NSDictionary = main[1] as! NSDictionary
         var precip2:NSString = secondPrecip["pop"] as! NSString
@@ -162,7 +308,15 @@ class HourlyWeatherClass: UIViewController {
         self.forecast3Label.text = self.forecast3String
         var thirdTemp:NSDictionary = main[2]["temp"] as! NSDictionary
         var temp3:NSString = thirdTemp["english"] as! NSString
-        self.temp3String = "Temperature: " + (temp3 as String) + "ºF"
+        if(farenheit)
+        {
+            self.temp3String = "Temperature: " + (temp3 as String) + "ºF"
+        }
+        else
+        {
+            temp3  = ConvertFtoC(temp3)
+            self.temp3String = "Temperature: " + (temp3 as String) + "ºC"
+        }
         self.temp3Label.text = self.temp3String
         var thirdPrecip:NSDictionary = main[2] as! NSDictionary
         var precip3:NSString = thirdPrecip["pop"] as! NSString
@@ -184,7 +338,15 @@ class HourlyWeatherClass: UIViewController {
         self.forecast4Label.text = self.forecast4String
         var fourthTemp:NSDictionary = main[3]["temp"] as! NSDictionary
         var temp4:NSString = fourthTemp["english"] as! NSString
-        self.temp4String = "Temperature: " + (temp4 as String) + "ºF"
+        if(farenheit)
+        {
+            self.temp4String = "Temperature: " + (temp4 as String) + "ºF"
+        }
+        else
+        {
+            temp4  = ConvertFtoC(temp4)
+            self.temp4String = "Temperature: " + (temp4 as String) + "ºC"
+        }
         self.temp4Label.text = self.temp4String
         var fourthPrecip:NSDictionary = main[3] as! NSDictionary
         var precip4:NSString = fourthPrecip["pop"] as! NSString
@@ -206,7 +368,15 @@ class HourlyWeatherClass: UIViewController {
         self.forecast5Label.text = self.forecast5String
         var fifthTemp:NSDictionary = main[4]["temp"] as! NSDictionary
         var temp5:NSString = fifthTemp["english"] as! NSString
-        self.temp5String = "Temperature: " + (temp5 as String) + "ºF"
+        if(farenheit)
+        {
+            self.temp5String = "Temperature: " + (temp5 as String) + "ºF"
+        }
+        else
+        {
+            temp5  = ConvertFtoC(temp5)
+            self.temp5String = "Temperature: " + (temp5 as String) + "ºC"
+        }
         self.temp5Label.text = self.temp5String
         var fifthPrecip:NSDictionary = main[4] as! NSDictionary
         var precip5:NSString = fifthPrecip["pop"] as! NSString
@@ -228,7 +398,15 @@ class HourlyWeatherClass: UIViewController {
         self.forecast6Label.text = self.forecast6String
         var sixthTemp:NSDictionary = main[5]["temp"] as! NSDictionary
         var temp6:NSString = sixthTemp["english"] as! NSString
-        self.temp6String = "Temperature: " + (temp6 as String) + "ºF"
+        if(farenheit)
+        {
+            self.temp6String = "Temperature: " + (temp6 as String) + "ºF"
+        }
+        else
+        {
+            temp6  = ConvertFtoC(temp6)
+            self.temp6String = "Temperature: " + (temp6 as String) + "ºC"
+        }
         self.temp6Label.text = self.temp6String
         var sixthPrecip:NSDictionary = main[5] as! NSDictionary
         var precip6:NSString = sixthPrecip["pop"] as! NSString

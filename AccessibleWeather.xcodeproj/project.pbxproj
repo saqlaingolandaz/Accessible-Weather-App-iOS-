@@ -9,21 +9,26 @@
 /* Begin PBXBuildFile section */
 		2B12AB8D1BA0EB3900FFC86A /* wulogo.png in Resources */ = {isa = PBXBuildFile; fileRef = 2B12AB8C1BA0EB3900FFC86A /* wulogo.png */; };
 		2B12AB8F1BA0EE1D00FFC86A /* HourlyWeatherClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B12AB8E1BA0EE1D00FFC86A /* HourlyWeatherClass.swift */; };
+		2B2B8ACB1C67A89200287D81 /* Thunder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B8AC31C67A89200287D81 /* Thunder.wav */; };
+		2B2B8ACC1C67A89200287D81 /* Wind.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B8AC41C67A89200287D81 /* Wind.wav */; };
+		2B2B8ACD1C67A89200287D81 /* Cloud.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B8AC51C67A89200287D81 /* Cloud.wav */; };
+		2B2B8ACE1C67A89200287D81 /* Fog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B8AC61C67A89200287D81 /* Fog.wav */; };
+		2B2B8ACF1C67A89200287D81 /* Ice.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B8AC71C67A89200287D81 /* Ice.wav */; };
+		2B2B8AD01C67A89200287D81 /* Rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B8AC81C67A89200287D81 /* Rain.wav */; };
+		2B2B8AD11C67A89200287D81 /* Snow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B8AC91C67A89200287D81 /* Snow.wav */; };
+		2B2B8AD21C67A89200287D81 /* Sun.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2B2B8ACA1C67A89200287D81 /* Sun.wav */; };
 		2B310EC01BD5F2D0000A8BA2 /* CustomWeatherInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B310EBF1BD5F2D0000A8BA2 /* CustomWeatherInfo.swift */; };
+		2B3328451CB49A4D00A4081A /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3328441CB49A4D00A4081A /* CoreLocation.framework */; };
 		2B895A9A1B9783CB00DC4C96 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B895A991B9783CB00DC4C96 /* AppDelegate.swift */; };
 		2B895A9C1B9783CB00DC4C96 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B895A9B1B9783CB00DC4C96 /* ViewController.swift */; };
 		2B895A9F1B9783CB00DC4C96 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2B895A9D1B9783CB00DC4C96 /* Main.storyboard */; };
 		2B895AA11B9783CB00DC4C96 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2B895AA01B9783CB00DC4C96 /* Images.xcassets */; };
 		2B895AA41B9783CB00DC4C96 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2B895AA21B9783CB00DC4C96 /* LaunchScreen.xib */; };
 		2B895AB01B9783CB00DC4C96 /* Accessible_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2B895AAF1B9783CB00DC4C96 /* Accessible_AppTests.swift */; };
+		2BA34CB91CA9CEBF00EE4661 /* CustomWeatherInfo2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BA34CB81CA9CEBF00EE4661 /* CustomWeatherInfo2.swift */; };
 		2BB49ACC1BB31BC100A37531 /* WeeklyWeatherClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BB49ACB1BB31BC100A37531 /* WeeklyWeatherClass.swift */; };
-		2BB72B021BF1AEEC006EF414 /* Fog.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B011BF1AEEC006EF414 /* Fog.wav */; };
-		2BB72B041BF1AEF8006EF414 /* Rain.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B031BF1AEF8006EF414 /* Rain.wav */; };
-		2BB72B061BF1AEFF006EF414 /* Snow.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B051BF1AEFF006EF414 /* Snow.wav */; };
-		2BB72B081BF1AF06006EF414 /* Sun.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B071BF1AF06006EF414 /* Sun.wav */; };
-		2BB72B0A1BF1AF0B006EF414 /* Thunder.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B091BF1AF0B006EF414 /* Thunder.wav */; };
-		2BB72B0C1BF1AF11006EF414 /* Wind.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BB72B0B1BF1AF11006EF414 /* Wind.wav */; };
-		2BBF576F1BF1B283005A7C18 /* Cloud.wav in Resources */ = {isa = PBXBuildFile; fileRef = 2BBF576E1BF1B283005A7C18 /* Cloud.wav */; };
+		2BF2F7C41CAE2084001563A7 /* CustomWeatherInfo3.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2BF2F7C31CAE2084001563A7 /* CustomWeatherInfo3.swift */; };
+		35F436D11C690479007BADAD /* SettingsPageClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 35F436D01C690479007BADAD /* SettingsPageClass.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,25 +44,30 @@
 /* Begin PBXFileReference section */
 		2B12AB8C1BA0EB3900FFC86A /* wulogo.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = wulogo.png; sourceTree = "<group>"; };
 		2B12AB8E1BA0EE1D00FFC86A /* HourlyWeatherClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HourlyWeatherClass.swift; sourceTree = "<group>"; };
+		2B2B8AC31C67A89200287D81 /* Thunder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Thunder.wav; sourceTree = "<group>"; };
+		2B2B8AC41C67A89200287D81 /* Wind.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Wind.wav; sourceTree = "<group>"; };
+		2B2B8AC51C67A89200287D81 /* Cloud.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Cloud.wav; sourceTree = "<group>"; };
+		2B2B8AC61C67A89200287D81 /* Fog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fog.wav; sourceTree = "<group>"; };
+		2B2B8AC71C67A89200287D81 /* Ice.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Ice.wav; sourceTree = "<group>"; };
+		2B2B8AC81C67A89200287D81 /* Rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Rain.wav; sourceTree = "<group>"; };
+		2B2B8AC91C67A89200287D81 /* Snow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Snow.wav; sourceTree = "<group>"; };
+		2B2B8ACA1C67A89200287D81 /* Sun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sun.wav; sourceTree = "<group>"; };
 		2B310EBF1BD5F2D0000A8BA2 /* CustomWeatherInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWeatherInfo.swift; sourceTree = "<group>"; };
-		2B895A941B9783CB00DC4C96 /* Accessible App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Accessible App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B3328441CB49A4D00A4081A /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		2B895A941B9783CB00DC4C96 /* AccessibleWeather.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = AccessibleWeather.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B895A981B9783CB00DC4C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B895A991B9783CB00DC4C96 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2B895A9B1B9783CB00DC4C96 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		2B895A9E1B9783CB00DC4C96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2B895AA01B9783CB00DC4C96 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		2B895AA31B9783CB00DC4C96 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
-		2B895AA91B9783CB00DC4C96 /* Accessible AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Accessible AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		2B895AA91B9783CB00DC4C96 /* AccessibleWeather.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AccessibleWeather.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		2B895AAE1B9783CB00DC4C96 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		2B895AAF1B9783CB00DC4C96 /* Accessible_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Accessible_AppTests.swift; sourceTree = "<group>"; };
+		2BA34CB81CA9CEBF00EE4661 /* CustomWeatherInfo2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWeatherInfo2.swift; sourceTree = "<group>"; };
 		2BB49ACB1BB31BC100A37531 /* WeeklyWeatherClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WeeklyWeatherClass.swift; sourceTree = "<group>"; };
-		2BB72B011BF1AEEC006EF414 /* Fog.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Fog.wav; sourceTree = "<group>"; };
-		2BB72B031BF1AEF8006EF414 /* Rain.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Rain.wav; sourceTree = "<group>"; };
-		2BB72B051BF1AEFF006EF414 /* Snow.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Snow.wav; sourceTree = "<group>"; };
-		2BB72B071BF1AF06006EF414 /* Sun.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Sun.wav; sourceTree = "<group>"; };
-		2BB72B091BF1AF0B006EF414 /* Thunder.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Thunder.wav; sourceTree = "<group>"; };
-		2BB72B0B1BF1AF11006EF414 /* Wind.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Wind.wav; sourceTree = "<group>"; };
-		2BBF576E1BF1B283005A7C18 /* Cloud.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = Cloud.wav; sourceTree = "<group>"; };
+		2BF2F7C31CAE2084001563A7 /* CustomWeatherInfo3.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomWeatherInfo3.swift; sourceTree = "<group>"; };
+		35F436D01C690479007BADAD /* SettingsPageClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsPageClass.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +75,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B3328451CB49A4D00A4081A /* CoreLocation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -81,6 +92,7 @@
 		2B895A8B1B9783CB00DC4C96 = {
 			isa = PBXGroup;
 			children = (
+				2B3328441CB49A4D00A4081A /* CoreLocation.framework */,
 				2B895A961B9783CB00DC4C96 /* Accessible App */,
 				2B895AAC1B9783CB00DC4C96 /* Accessible AppTests */,
 				2B895A951B9783CB00DC4C96 /* Products */,
@@ -90,8 +102,8 @@
 		2B895A951B9783CB00DC4C96 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				2B895A941B9783CB00DC4C96 /* Accessible App.app */,
-				2B895AA91B9783CB00DC4C96 /* Accessible AppTests.xctest */,
+				2B895A941B9783CB00DC4C96 /* AccessibleWeather.app */,
+				2B895AA91B9783CB00DC4C96 /* AccessibleWeather.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -103,7 +115,10 @@
 				2B12AB8E1BA0EE1D00FFC86A /* HourlyWeatherClass.swift */,
 				2BB49ACB1BB31BC100A37531 /* WeeklyWeatherClass.swift */,
 				2B310EBF1BD5F2D0000A8BA2 /* CustomWeatherInfo.swift */,
+				2BA34CB81CA9CEBF00EE4661 /* CustomWeatherInfo2.swift */,
+				2BF2F7C31CAE2084001563A7 /* CustomWeatherInfo3.swift */,
 				2B895A9B1B9783CB00DC4C96 /* ViewController.swift */,
+				35F436D01C690479007BADAD /* SettingsPageClass.swift */,
 				2B895A9D1B9783CB00DC4C96 /* Main.storyboard */,
 				2B895AA01B9783CB00DC4C96 /* Images.xcassets */,
 				2B895AA21B9783CB00DC4C96 /* LaunchScreen.xib */,
@@ -115,13 +130,14 @@
 		2B895A971B9783CB00DC4C96 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				2BBF576E1BF1B283005A7C18 /* Cloud.wav */,
-				2BB72B0B1BF1AF11006EF414 /* Wind.wav */,
-				2BB72B091BF1AF0B006EF414 /* Thunder.wav */,
-				2BB72B071BF1AF06006EF414 /* Sun.wav */,
-				2BB72B051BF1AEFF006EF414 /* Snow.wav */,
-				2BB72B031BF1AEF8006EF414 /* Rain.wav */,
-				2BB72B011BF1AEEC006EF414 /* Fog.wav */,
+				2B2B8AC31C67A89200287D81 /* Thunder.wav */,
+				2B2B8AC41C67A89200287D81 /* Wind.wav */,
+				2B2B8AC51C67A89200287D81 /* Cloud.wav */,
+				2B2B8AC61C67A89200287D81 /* Fog.wav */,
+				2B2B8AC71C67A89200287D81 /* Ice.wav */,
+				2B2B8AC81C67A89200287D81 /* Rain.wav */,
+				2B2B8AC91C67A89200287D81 /* Snow.wav */,
+				2B2B8ACA1C67A89200287D81 /* Sun.wav */,
 				2B12AB8C1BA0EB3900FFC86A /* wulogo.png */,
 				2B895A981B9783CB00DC4C96 /* Info.plist */,
 			);
@@ -148,9 +164,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		2B895A931B9783CB00DC4C96 /* Accessible App */ = {
+		2B895A931B9783CB00DC4C96 /* AccessibleWeather */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B895AB31B9783CB00DC4C96 /* Build configuration list for PBXNativeTarget "Accessible App" */;
+			buildConfigurationList = 2B895AB31B9783CB00DC4C96 /* Build configuration list for PBXNativeTarget "AccessibleWeather" */;
 			buildPhases = (
 				2B895A901B9783CB00DC4C96 /* Sources */,
 				2B895A911B9783CB00DC4C96 /* Frameworks */,
@@ -160,14 +176,14 @@
 			);
 			dependencies = (
 			);
-			name = "Accessible App";
+			name = AccessibleWeather;
 			productName = "Accessible App";
-			productReference = 2B895A941B9783CB00DC4C96 /* Accessible App.app */;
+			productReference = 2B895A941B9783CB00DC4C96 /* AccessibleWeather.app */;
 			productType = "com.apple.product-type.application";
 		};
-		2B895AA81B9783CB00DC4C96 /* Accessible AppTests */ = {
+		2B895AA81B9783CB00DC4C96 /* AccessibleWeatherTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2B895AB61B9783CB00DC4C96 /* Build configuration list for PBXNativeTarget "Accessible AppTests" */;
+			buildConfigurationList = 2B895AB61B9783CB00DC4C96 /* Build configuration list for PBXNativeTarget "AccessibleWeatherTests" */;
 			buildPhases = (
 				2B895AA51B9783CB00DC4C96 /* Sources */,
 				2B895AA61B9783CB00DC4C96 /* Frameworks */,
@@ -178,9 +194,9 @@
 			dependencies = (
 				2B895AAB1B9783CB00DC4C96 /* PBXTargetDependency */,
 			);
-			name = "Accessible AppTests";
+			name = AccessibleWeatherTests;
 			productName = "Accessible AppTests";
-			productReference = 2B895AA91B9783CB00DC4C96 /* Accessible AppTests.xctest */;
+			productReference = 2B895AA91B9783CB00DC4C96 /* AccessibleWeather.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -196,7 +212,7 @@
 				TargetAttributes = {
 					2B895A931B9783CB00DC4C96 = {
 						CreatedOnToolsVersion = 6.2;
-						DevelopmentTeam = 24A3KJJP42;
+						DevelopmentTeam = X8N2HGVVZA;
 					};
 					2B895AA81B9783CB00DC4C96 = {
 						CreatedOnToolsVersion = 6.2;
@@ -204,7 +220,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 2B895A8F1B9783CB00DC4C96 /* Build configuration list for PBXProject "Accessible App" */;
+			buildConfigurationList = 2B895A8F1B9783CB00DC4C96 /* Build configuration list for PBXProject "AccessibleWeather" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -217,8 +233,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				2B895A931B9783CB00DC4C96 /* Accessible App */,
-				2B895AA81B9783CB00DC4C96 /* Accessible AppTests */,
+				2B895A931B9783CB00DC4C96 /* AccessibleWeather */,
+				2B895AA81B9783CB00DC4C96 /* AccessibleWeatherTests */,
 			);
 		};
 /* End PBXProject section */
@@ -228,17 +244,18 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2B2B8AD11C67A89200287D81 /* Snow.wav in Resources */,
+				2B2B8ACB1C67A89200287D81 /* Thunder.wav in Resources */,
+				2B2B8AD21C67A89200287D81 /* Sun.wav in Resources */,
 				2B895A9F1B9783CB00DC4C96 /* Main.storyboard in Resources */,
-				2BB72B081BF1AF06006EF414 /* Sun.wav in Resources */,
+				2B2B8ACD1C67A89200287D81 /* Cloud.wav in Resources */,
+				2B2B8ACF1C67A89200287D81 /* Ice.wav in Resources */,
 				2B895AA41B9783CB00DC4C96 /* LaunchScreen.xib in Resources */,
 				2B12AB8D1BA0EB3900FFC86A /* wulogo.png in Resources */,
-				2BBF576F1BF1B283005A7C18 /* Cloud.wav in Resources */,
+				2B2B8AD01C67A89200287D81 /* Rain.wav in Resources */,
+				2B2B8ACC1C67A89200287D81 /* Wind.wav in Resources */,
 				2B895AA11B9783CB00DC4C96 /* Images.xcassets in Resources */,
-				2BB72B061BF1AEFF006EF414 /* Snow.wav in Resources */,
-				2BB72B0C1BF1AF11006EF414 /* Wind.wav in Resources */,
-				2BB72B041BF1AEF8006EF414 /* Rain.wav in Resources */,
-				2BB72B021BF1AEEC006EF414 /* Fog.wav in Resources */,
-				2BB72B0A1BF1AF0B006EF414 /* Thunder.wav in Resources */,
+				2B2B8ACE1C67A89200287D81 /* Fog.wav in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,8 +275,11 @@
 			files = (
 				2BB49ACC1BB31BC100A37531 /* WeeklyWeatherClass.swift in Sources */,
 				2B895A9C1B9783CB00DC4C96 /* ViewController.swift in Sources */,
+				2BA34CB91CA9CEBF00EE4661 /* CustomWeatherInfo2.swift in Sources */,
 				2B310EC01BD5F2D0000A8BA2 /* CustomWeatherInfo.swift in Sources */,
 				2B895A9A1B9783CB00DC4C96 /* AppDelegate.swift in Sources */,
+				2BF2F7C41CAE2084001563A7 /* CustomWeatherInfo3.swift in Sources */,
+				35F436D11C690479007BADAD /* SettingsPageClass.swift in Sources */,
 				2B12AB8F1BA0EE1D00FFC86A /* HourlyWeatherClass.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -277,7 +297,7 @@
 /* Begin PBXTargetDependency section */
 		2B895AAB1B9783CB00DC4C96 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 2B895A931B9783CB00DC4C96 /* Accessible App */;
+			target = 2B895A931B9783CB00DC4C96 /* AccessibleWeather */;
 			targetProxy = 2B895AAA1B9783CB00DC4C96 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -389,7 +409,7 @@
 				INFOPLIST_FILE = "Accessible App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SaqlainGolandaz.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AccessibleWeather;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -404,7 +424,7 @@
 				INFOPLIST_FILE = "Accessible App/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SaqlainGolandaz.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = AccessibleWeather;
 				PROVISIONING_PROFILE = "";
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -425,8 +445,8 @@
 				INFOPLIST_FILE = "Accessible AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SaqlainGolandaz.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Accessible App.app/Accessible App";
+				PRODUCT_NAME = AccessibleWeather;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AccessibleWeather.app/AccessibleWeather";
 			};
 			name = Debug;
 		};
@@ -441,15 +461,15 @@
 				INFOPLIST_FILE = "Accessible AppTests/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.SaqlainGolandaz.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Accessible App.app/Accessible App";
+				PRODUCT_NAME = AccessibleWeather;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/AccessibleWeather.app/AccessibleWeather";
 			};
 			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2B895A8F1B9783CB00DC4C96 /* Build configuration list for PBXProject "Accessible App" */ = {
+		2B895A8F1B9783CB00DC4C96 /* Build configuration list for PBXProject "AccessibleWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B895AB11B9783CB00DC4C96 /* Debug */,
@@ -458,7 +478,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B895AB31B9783CB00DC4C96 /* Build configuration list for PBXNativeTarget "Accessible App" */ = {
+		2B895AB31B9783CB00DC4C96 /* Build configuration list for PBXNativeTarget "AccessibleWeather" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B895AB41B9783CB00DC4C96 /* Debug */,
@@ -467,7 +487,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2B895AB61B9783CB00DC4C96 /* Build configuration list for PBXNativeTarget "Accessible AppTests" */ = {
+		2B895AB61B9783CB00DC4C96 /* Build configuration list for PBXNativeTarget "AccessibleWeatherTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2B895AB71B9783CB00DC4C96 /* Debug */,

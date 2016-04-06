@@ -1,3 +1,4 @@
+
 //
 //  WeeklyWeatherClass.swift
 //  Accessible App
@@ -11,6 +12,7 @@ import UIKit
 class WeeklyWeatherClass: UIViewController {
     
     
+    @IBOutlet weak var weeklyHeadingLabel: UILabel!
     @IBOutlet weak var time1Label: UILabel!
     @IBOutlet weak var forecast1Label: UILabel!
     @IBOutlet weak var high1Label: UILabel!
@@ -87,12 +89,125 @@ class WeeklyWeatherClass: UIViewController {
     var precip5String:String = ""
     var img5String:String = ""
     
-    
+    var contrast:String = "Contrast"
     
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        setColor()
         weeklyData()
+    }
+    
+    override func preferredStatusBarStyle() -> UIStatusBarStyle
+    {
+        
+        let userPrefs = NSUserDefaults.standardUserDefaults()
+        var contrastVal:Bool = false
+        
+        if let contrastValue:Bool = userPrefs.boolForKey(contrast){
+            contrastVal = contrastValue
+        }
+        
+        if(contrastVal)
+        {
+            
+            return UIStatusBarStyle.LightContent
+        }
+        else{
+            return UIStatusBarStyle.Default
+        }
+    }
+    
+    func setColor()
+    {
+        let userPrefs = NSUserDefaults.standardUserDefaults()
+        var contrastVal:Bool = false
+        
+        if let contrastValue:Bool = userPrefs.boolForKey(contrast){
+            contrastVal = contrastValue
+        }
+        
+        if(contrastVal)
+        {
+            self.view.backgroundColor = UIColor.blackColor()
+            
+            weeklyHeadingLabel.textColor = UIColor.whiteColor()
+            
+            time1Label.textColor = UIColor.whiteColor()
+            high1Label.textColor = UIColor.whiteColor()
+            low1Label.textColor = UIColor.whiteColor()
+            forecast1Label.textColor = UIColor.whiteColor()
+            precip1Label.textColor = UIColor.whiteColor()
+            
+            time2Label.textColor = UIColor.whiteColor()
+            high2Label.textColor = UIColor.whiteColor()
+            low2Label.textColor = UIColor.whiteColor()
+            forecast2Label.textColor = UIColor.whiteColor()
+            precip2Label.textColor = UIColor.whiteColor()
+            
+            time3Label.textColor = UIColor.whiteColor()
+            high3Label.textColor = UIColor.whiteColor()
+            low3Label.textColor = UIColor.whiteColor()
+            forecast3Label.textColor = UIColor.whiteColor()
+            precip3Label.textColor = UIColor.whiteColor()
+            
+            time4Label.textColor = UIColor.whiteColor()
+            high4Label.textColor = UIColor.whiteColor()
+            low4Label.textColor = UIColor.whiteColor()
+            forecast4Label.textColor = UIColor.whiteColor()
+            precip4Label.textColor = UIColor.whiteColor()
+           
+            time5Label.textColor = UIColor.whiteColor()
+            high5Label.textColor = UIColor.whiteColor()
+            low5Label.textColor = UIColor.whiteColor()
+            forecast5Label.textColor = UIColor.whiteColor()
+            precip5Label.textColor = UIColor.whiteColor()
+            
+        }
+        else
+        {
+            self.view.backgroundColor = UIColor.whiteColor()
+            
+            weeklyHeadingLabel.textColor = UIColor.blackColor()
+            
+            time1Label.textColor = UIColor.blackColor()
+            high1Label.textColor = UIColor.blackColor()
+            low1Label.textColor = UIColor.blackColor()
+            forecast1Label.textColor = UIColor.blackColor()
+            precip1Label.textColor = UIColor.blackColor()
+            
+            time2Label.textColor = UIColor.blackColor()
+            high2Label.textColor = UIColor.blackColor()
+            low2Label.textColor = UIColor.blackColor()
+            forecast2Label.textColor = UIColor.blackColor()
+            precip2Label.textColor = UIColor.blackColor()
+            
+            time3Label.textColor = UIColor.blackColor()
+            high3Label.textColor = UIColor.blackColor()
+            low3Label.textColor = UIColor.blackColor()
+            forecast3Label.textColor = UIColor.blackColor()
+            precip3Label.textColor = UIColor.blackColor()
+            
+            time4Label.textColor = UIColor.blackColor()
+            high4Label.textColor = UIColor.blackColor()
+            low4Label.textColor = UIColor.blackColor()
+            forecast4Label.textColor = UIColor.blackColor()
+            precip4Label.textColor = UIColor.blackColor()
+            
+            time5Label.textColor = UIColor.blackColor()
+            high5Label.textColor = UIColor.blackColor()
+            low5Label.textColor = UIColor.blackColor()
+            forecast5Label.textColor = UIColor.blackColor()
+            precip5Label.textColor = UIColor.blackColor()
+        }
+    }
+    
+    func ConvertFtoC(temp:NSString)->NSString
+    {
+        var floatValue:Float = temp.floatValue
+        floatValue = ((floatValue - 32)*5)/9.0
+        let temp2:NSString  = NSString(format: "%.0f", floatValue)
+        return temp2
     }
     
     func weeklyData() {
@@ -107,6 +222,23 @@ class WeeklyWeatherClass: UIViewController {
             // Catch fires here, with an NSErrro being thrown from the JSONObjectWithData method
             print("A JSON parsing error occurred, here are the details:\n \(error)")
         }
+        
+        //Get the default units value
+        let userPrefs = NSUserDefaults.standardUserDefaults()
+        var farenheit:Bool = false
+        var units:String = "Units"
+        
+        if let value:Int = userPrefs.integerForKey(units){
+            if (value == 1)
+            {
+                farenheit = true
+            }
+            else
+            {
+                farenheit = false
+            }
+        }
+        
         var main:NSDictionary = parsedData["forecast"] as! NSDictionary
         var simpleForecast:NSDictionary = main["simpleforecast"] as! NSDictionary
         var forecastDay:NSArray = simpleForecast["forecastday"] as! NSArray
@@ -120,11 +252,27 @@ class WeeklyWeatherClass: UIViewController {
         self.forecast1Label.text = self.forecast1String
         var high1:NSDictionary = days1["high"] as! NSDictionary
         var hi1:NSString = high1["fahrenheit"] as! NSString
-        self.high1String = "High: " + (hi1 as String) + "ºF"
+        if(farenheit)
+        {
+            self.high1String = "High: " + (hi1 as String) + "ºF"
+        }
+        else
+        {
+            hi1  = ConvertFtoC(hi1)
+            self.high1String = "High: " + (hi1 as String) + "ºC"
+        }
         self.high1Label.text = self.high1String
         var low1:NSDictionary = days1["low"] as! NSDictionary
         var lo1:NSString = low1["fahrenheit"] as! NSString
-        self.low1String = "Low: " + (lo1 as String) + "ºF"
+        if(farenheit)
+        {
+            self.low1String = "Low: " + (lo1 as String) + "ºF"
+        }
+        else
+        {
+            lo1  = ConvertFtoC(lo1)
+            self.low1String = "Low: " + (lo1 as String) + "ºC"
+        }
         self.low1Label.text = self.low1String
         var img1:NSString = days1["icon_url"] as! NSString
         var pic1 = NSURL(string: img1 as String)
@@ -144,11 +292,27 @@ class WeeklyWeatherClass: UIViewController {
         self.forecast2Label.text = self.forecast2String
         var high2:NSDictionary = days2["high"] as! NSDictionary
         var hi2:NSString = high2["fahrenheit"] as! NSString
-        self.high2String = "High: " + (hi2 as String) + "ºF"
+        if(farenheit)
+        {
+            self.high2String = "High: " + (hi2 as String) + "ºF"
+        }
+        else
+        {
+            hi2  = ConvertFtoC(hi2)
+            self.high2String = "High: " + (hi2 as String) + "ºC"
+        }
         self.high2Label.text = self.high2String
         var low2:NSDictionary = days2["low"] as! NSDictionary
         var lo2:NSString = low2["fahrenheit"] as! NSString
-        self.low2String = "Low: " + (lo2 as String) + "ºF"
+        if(farenheit)
+        {
+            self.low2String = "Low: " + (lo2 as String) + "ºF"
+        }
+        else
+        {
+            lo2  = ConvertFtoC(lo2)
+            self.low2String = "Low: " + (lo2 as String) + "ºC"
+        }
         self.low2Label.text = self.low2String
         var img2:NSString = days2["icon_url"] as! NSString
         var pic2 = NSURL(string: img2 as String)
@@ -168,11 +332,27 @@ class WeeklyWeatherClass: UIViewController {
         self.forecast3Label.text = self.forecast3String
         var high3:NSDictionary = days3["high"] as! NSDictionary
         var hi3:NSString = high3["fahrenheit"] as! NSString
-        self.high3String = "High: " + (hi3 as String) + "ºF"
+        if(farenheit)
+        {
+            self.high3String = "High: " + (hi3 as String) + "ºF"
+        }
+        else
+        {
+            hi3  = ConvertFtoC(hi3)
+            self.high3String = "High: " + (hi3 as String) + "ºC"
+        }
         self.high3Label.text = self.high3String
         var low3:NSDictionary = days3["low"] as! NSDictionary
         var lo3:NSString = low3["fahrenheit"] as! NSString
-        self.low3String = "Low: " + (lo3 as String) + "ºF"
+        if(farenheit)
+        {
+            self.low3String = "Low: " + (lo3 as String) + "ºF"
+        }
+        else
+        {
+            lo3  = ConvertFtoC(lo3)
+            self.low3String = "Low: " + (lo3 as String) + "ºC"
+        }
         self.low3Label.text = self.low3String
         var img3:NSString = days3["icon_url"] as! NSString
         var pic3 = NSURL(string: img3 as String)
@@ -192,11 +372,27 @@ class WeeklyWeatherClass: UIViewController {
         self.forecast4Label.text = self.forecast4String
         var high4:NSDictionary = days4["high"] as! NSDictionary
         var hi4:NSString = high4["fahrenheit"] as! NSString
-        self.high4String = "High: " + (hi4 as String) + "ºF"
+        if(farenheit)
+        {
+            self.high4String = "High: " + (hi4 as String) + "ºF"
+        }
+        else
+        {
+            hi4  = ConvertFtoC(hi4)
+            self.high4String = "High: " + (hi4 as String) + "ºC"
+        }
         self.high4Label.text = self.high4String
         var low4:NSDictionary = days4["low"] as! NSDictionary
         var lo4:NSString = low4["fahrenheit"] as! NSString
-        self.low4String = "Low: " + (lo4 as String) + "ºF"
+        if(farenheit)
+        {
+            self.low4String = "Low: " + (lo4 as String) + "ºF"
+        }
+        else
+        {
+            lo4  = ConvertFtoC(lo4)
+            self.low4String = "Low: " + (lo4 as String) + "ºC"
+        }
         self.low4Label.text = self.low4String
         var img4:NSString = days4["icon_url"] as! NSString
         var pic4 = NSURL(string: img4 as String)
@@ -216,11 +412,27 @@ class WeeklyWeatherClass: UIViewController {
         self.forecast5Label.text = self.forecast5String
         var high5:NSDictionary = days5["high"] as! NSDictionary
         var hi5:NSString = high5["fahrenheit"] as! NSString
-        self.high5String = "High: " + (hi5 as String) + "ºF"
+        if(farenheit)
+        {
+            self.high5String = "High: " + (hi5 as String) + "ºF"
+        }
+        else
+        {
+            hi5  = ConvertFtoC(hi5)
+            self.high5String = "High: " + (hi5 as String) + "ºC"
+        }
         self.high5Label.text = self.high5String
         var low5:NSDictionary = days5["low"] as! NSDictionary
         var lo5:NSString = low5["fahrenheit"] as! NSString
-        self.low5String = "Low: " + (lo5 as String) + "ºF"
+        if(farenheit)
+        {
+            self.low5String = "Low: " + (lo5 as String) + "ºF"
+        }
+        else
+        {
+            lo5  = ConvertFtoC(lo5)
+            self.low5String = "Low: " + (lo5 as String) + "ºC"
+        }
         self.low5Label.text = self.low5String
         var img5:NSString = days5["icon_url"] as! NSString
         var pic5 = NSURL(string: img5 as String)

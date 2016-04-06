@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B895A931B9783CB00DC4C96"
-               BuildableName = "Accessible App.app"
-               BlueprintName = "Accessible App"
-               ReferencedContainer = "container:Accessible App.xcodeproj">
+               BuildableName = "AccessibleWeather.app"
+               BlueprintName = "AccessibleWeather"
+               ReferencedContainer = "container:AccessibleWeather.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
          <BuildActionEntry
@@ -29,9 +29,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B895AA81B9783CB00DC4C96"
-               BuildableName = "Accessible AppTests.xctest"
-               BlueprintName = "Accessible AppTests"
-               ReferencedContainer = "container:Accessible App.xcodeproj">
+               BuildableName = "AccessibleWeather.xctest"
+               BlueprintName = "AccessibleWeatherTests"
+               ReferencedContainer = "container:AccessibleWeather.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -47,9 +47,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "2B895AA81B9783CB00DC4C96"
-               BuildableName = "Accessible AppTests.xctest"
-               BlueprintName = "Accessible AppTests"
-               ReferencedContainer = "container:Accessible App.xcodeproj">
+               BuildableName = "AccessibleWeather.xctest"
+               BlueprintName = "AccessibleWeatherTests"
+               ReferencedContainer = "container:AccessibleWeather.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -57,9 +57,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B895A931B9783CB00DC4C96"
-            BuildableName = "Accessible App.app"
-            BlueprintName = "Accessible App"
-            ReferencedContainer = "container:Accessible App.xcodeproj">
+            BuildableName = "AccessibleWeather.app"
+            BlueprintName = "AccessibleWeather"
+            ReferencedContainer = "container:AccessibleWeather.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B895A931B9783CB00DC4C96"
-            BuildableName = "Accessible App.app"
-            BlueprintName = "Accessible App"
-            ReferencedContainer = "container:Accessible App.xcodeproj">
+            BuildableName = "AccessibleWeather.app"
+            BlueprintName = "AccessibleWeather"
+            ReferencedContainer = "container:AccessibleWeather.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -99,9 +99,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "2B895A931B9783CB00DC4C96"
-            BuildableName = "Accessible App.app"
-            BlueprintName = "Accessible App"
-            ReferencedContainer = "container:Accessible App.xcodeproj">
+            BuildableName = "AccessibleWeather.app"
+            BlueprintName = "AccessibleWeather"
+            ReferencedContainer = "container:AccessibleWeather.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
